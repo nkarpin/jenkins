@@ -1,1 +1,5 @@
-class jenkins {}
+class jenkins {
+
+	include jenkins::install
+	
+}
