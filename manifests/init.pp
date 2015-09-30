@@ -1,7 +1,7 @@
 class jenkins (
 
-  $port = $jenkins::params::port
-  $service = $jenkins::params::service
+  $port = $jenkins::params::port,
+  $service = $jenkins::params::service,
   $user   =  $jenkins::params::user 
 
 ) inherits jenkins::params {
