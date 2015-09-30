@@ -13,6 +13,6 @@ class jenkins::install {
 ##sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
   	apt::source { 'jenkinsci':
   		location => 'http://pkg.jenkins-ci.org/debian binary/',
-      require => apt::key['jenkinsci']
+      require => Apt::Key['jenkinsci']
 	}
 }
