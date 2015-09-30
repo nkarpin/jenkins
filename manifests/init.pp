@@ -1,6 +1,6 @@
 class jenkins (
 
-  $port = $jenkins::params::port,
+  $http_port = $jenkins::params::http_port,
   $service = $jenkins::params::service,
   $user   =  $jenkins::params::user 
 
