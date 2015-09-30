@@ -1,10 +1,4 @@
-class jenkins (
-
-  $http_port = $jenkins::params::http_port,
-  $service = $jenkins::params::service,
-  $user   =  $jenkins::params::user 
-
-) inherits jenkins::params {
+class jenkins {
 
 	include jenkins::install
 	include jenkins::service
