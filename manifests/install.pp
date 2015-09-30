@@ -1,20 +1,14 @@
 class jenkins::install {
 
-	package {
-    	'openjdk-7-jre':
-        	ensure      => installed
-	}
+  include jenkins::install::repo
+  include jenkins::install::java  
 
-##wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
-	apt::key { 'jenkinsci':
-		id  =>  '0x9B7D32F2D50582E6',
-  		source  => 'http://jenkins-ci.org/debian/jenkins-ci.org.key'
-  	}
-##sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
-  	apt::source { 'jenkinsci':
-  		location => 'http://pkg.jenkins-ci.org/debian',
-      release => 'binary/',
-      repos => '',
-      require => Apt::Key['jenkinsci']
-	}
+  package { 
+    'jenkins':
+          ensure      => installed,
+          require     => Exec['apt-get update']      
+  }
+
+  Class['jenkins::install::repo'] -> Class['jenkins::install::java'] -> Package['jenkins']
+
 }
