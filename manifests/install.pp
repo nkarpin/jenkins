@@ -14,6 +14,7 @@ class jenkins::install {
   	apt::source { 'jenkinsci':
   		location => 'http://pkg.jenkins-ci.org/debian',
       release => 'binary/',
+      repos => '',
       require => Apt::Key['jenkinsci']
 	}
 }
