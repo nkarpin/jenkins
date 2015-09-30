@@ -1,1 +1,1 @@
-class jenkins::confg {}
+class jenkins::config {}
