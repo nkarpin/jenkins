@@ -4,29 +4,25 @@ define jenkins::job (
 	$disabled = 'false',
 	$shell_builders=['echo Hello World!!!']
 ) {
-	file {
+    file {
 
-	    '${dir_name}':
-	        ensure  => directory,
-	        path    => '/var/lib/jenkins/jobs/',
-	        mode    => '0755',
-	        owner   => 'jenkins',
-	        group   => 'jenkins';
+        "/var/lib/jenkins/jobs/${dir_name}":
+            ensure  => directory,
+            mode    => '0755',
+            owner   => 'jenkins',
+            group   => 'jenkins';
 
-	    'builds':
-	        ensure  => directory,
-	        path    => '/var/lib/jenkins/jobs/',
-	        mode    => '0755',
-	        owner   => 'jenkins',
-	        group   => 'jenkins';
-	    
-	    'config.xml':
-	        ensure  => file,
-	        path    => '/var/lib/jenkins/jobs/${dir_name}',
-	        content => template('jenkins/job/job_default.erb'),
-	        mode    => '0644',
-	        owner   => 'jenkins',
-	        group   => 'jenkins';
-	}
+        "/var/lib/jenkins/jobs/${dir_name}/builds":
+            ensure  => directory,
+            mode    => '0755',
+            owner   => 'jenkins',
+            group   => 'jenkins';
 
+        "/var/lib/jenkins/jobs/${dir_name}/config.xml":
+            ensure  => file,
+            content => template('jenkins/job/job_default.erb'),
+            mode    => '0644',
+            owner   => 'jenkins',
+            group   => 'jenkins';
+    }
 }
