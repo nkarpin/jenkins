@@ -2,10 +2,9 @@ define jenkins::job (
 	$dir_name = $title, 
 	$description = 'created by puppet', 
 	$disabled = 'false',
-	$shell_builders=['echo Hello World!!!']
+	$shell_builders = ['echo Hello World!!!', 'uptime']
 ) {
     file {
-
         "/var/lib/jenkins/jobs/${dir_name}":
             ensure  => directory,
             mode    => '0755',
@@ -23,6 +22,7 @@ define jenkins::job (
             content => template('jenkins/job/job_default.erb'),
             mode    => '0644',
             owner   => 'jenkins',
-            group   => 'jenkins';
+            group   => 'jenkins',
+            notify  => Class['jenkins::service'];
     }
 }
