@@ -7,24 +7,18 @@ define jenkins::job (
 	file {
 		default:
 			owner   => 'jenkins',
-	        group   => 'jenkins',
-	}
+	        group   => 'jenkins';
 
-	file {
 	    $dir_name:
 	        ensure  => directory,
 	        path    => '/var/lib/jenkins/jobs/',
 	        mode    => '0755';
-	}
 
-	file {
 	    'builds':
 	        ensure  => directory,
 	        path    => '/var/lib/jenkins/jobs/',
 	        mode    => '0755';
-	}
-	
-	file {
+
 	    'config.xml':
 	        ensure  => file,
 	        path    => '/var/lib/jenkins/jobs/${dir_name}',
