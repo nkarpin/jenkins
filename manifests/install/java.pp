@@ -1,9 +1,9 @@
-class jenkins::install::java {	
-	
-	package { 
-    'openjdk-7-jre':
-    	ensure      => installed,
-    	require     => Exec['apt-get update']
-	}
-	
+class jenkins::install::java inherits jenkins {
+  
+  package {
+    $jenkins::java:
+		ensure      => installed,
+		require     => Exec['apt-get update']
+  }
+
 }

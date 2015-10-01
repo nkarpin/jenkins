@@ -2,4 +2,4 @@
 
 just a jenkins module from scratch
 
-i am training to write modules myself
+currently supporting only ubuntu14.04

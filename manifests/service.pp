@@ -2,11 +2,9 @@ class jenkins::service {
 
 	service {
 	     'jenkins':
-	         ensure      => running,
-	         enable      => true,
-	         #hasrestart  => true,
-	         #hasstatus   => true,
-	         require     => Class['config'];
-	 } 
+	        ensure      => running,
+	        enable      => true,
+	        require     => Class['config'];
+	} 
 	 
 }
