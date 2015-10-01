@@ -6,7 +6,7 @@ class jenkins::service {
 	         enable      => true,
 	         #hasrestart  => true,
 	         #hasstatus   => true,
-	         #require     => Class['config'];
+	         require     => Class['config'];
 	 } 
 	 
 }
