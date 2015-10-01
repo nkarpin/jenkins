@@ -14,7 +14,7 @@
   <builders>
     <% @shell_builders.each do |command| -%>
       <hudson.tasks.Shell>
-        <command><%= val %></command>
+        <command><%= command %></command>
       </hudson.tasks.Shell> 
     <% end -%>
   </builders>
