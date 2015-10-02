@@ -3,7 +3,9 @@ define jenkins::job (
 	$disabled = 'false',
 	$shell_builders = ['echo Hello World!!!', 'uptime']
 
-) inherits jenkins::params {
+) {
+
+    include jenkins::params
 
     file {
         "${jenkins::params::home_path}/jenkins/jobs/${title}":
