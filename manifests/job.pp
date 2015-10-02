@@ -13,7 +13,7 @@ define jenkins::job (
             mode    => '0755',
             owner   => 'jenkins',
             group   => 'jenkins',
-            subscibe => Class['jenkins::service'];
+            subscribe => Class['jenkins::service'];
 
 
         "${jenkins::params::home_path}/jenkins/jobs/${title}/builds":
