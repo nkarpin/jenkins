@@ -20,7 +20,7 @@ define jenkins::job (
             ensure  => directory,
             mode    => '0755',
             owner   => 'jenkins',
-            group   => 'jenkins';
+            group   => 'jenkins',
             require => Class['jenkins'];
 
 
