@@ -6,23 +6,14 @@ define jenkins::job (
 ) {
 
     include jenkins::params
-
-    #file {
-     #  "${jenkins::params::home_path}/jenkins/jobs":
-      #       ensure  => directory,
-       #      mode    => '0755',
-        #     owner   => 'jenkins',
-         #    subscribe   => Class['jenkins'];
-    #}        
-
+  
     file {
         "${jenkins::params::home_path}/jenkins/jobs/${title}":
             ensure  => directory,
             mode    => '0755',
             owner   => 'jenkins',
             group   => 'jenkins',
-            require => Class['jenkins'];
-
+            subscribe => Class['jenkins::config'];
 
         "${jenkins::params::home_path}/jenkins/jobs/${title}/builds":
             ensure  => directory,
