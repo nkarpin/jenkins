@@ -14,6 +14,6 @@ class jenkins::install {
 	  		ensure      => installed,
 	}
 
-	Class['jenkins::install::repo'] ~> Exec['apt-get update'] ~> Class['jenkins::install::java'] ~> Package['jenkins']
+	Class['Jenkins::Install::Repo'] ~> Exec['Apt-get Update'] ~> Class['Jenkins::Install::Java'] ~> Package['Jenkins']
 
 }

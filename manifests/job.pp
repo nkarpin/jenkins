@@ -13,7 +13,7 @@ define jenkins::job (
             mode    => '0755',
             owner   => 'jenkins',
             group   => 'jenkins',
-            subscribe => Class['jenkins::config'];
+            subscribe => Class['Jenkins::Config'];
 
         "${jenkins::params::home_path}/jenkins/jobs/${title}/builds":
             ensure  => directory,
@@ -28,6 +28,6 @@ define jenkins::job (
             mode    => '0644',
             owner   => 'jenkins',
             group   => 'jenkins',
-            notify  => Class['jenkins::service'];
+            notify  => Class['Jenkins::Service'];
     }
 }
