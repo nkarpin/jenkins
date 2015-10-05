@@ -4,7 +4,7 @@ class jenkins::service {
 	     'jenkins':
 	        ensure      => running,
 	        enable      => true,
-	        require     => Class['config'];
+	        require     => Class['Jenkins::Config'];
 	} 
 	 
 }
