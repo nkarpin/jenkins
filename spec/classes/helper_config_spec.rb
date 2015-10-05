@@ -12,6 +12,6 @@ describe "jenkins::config" do
 			'ensure'  => 'directory',
 			'mode'    => '0755',
 			'owner'   => 'jenkins',
-  			})
+  		})
   	end
 end  
