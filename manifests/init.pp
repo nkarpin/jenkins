@@ -1,6 +1,6 @@
 class jenkins (
 
-    #install
+	#install
   	
   	$gpg_key_id = $jenkins::params::gpg_key_id,
   	$gpg_key_source = $jenkins::params::gpg_key_source,
