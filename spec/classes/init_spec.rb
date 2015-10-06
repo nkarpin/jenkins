@@ -5,11 +5,13 @@ describe "jenkins" do
 
 
 	it do
-		should contain_class('jenkins::install').with({
+		should contain_class('jenkins::install').only_with(
+			:name   => 'Jenkins::Install',
 			:notify => 'Class[Jenkins::Config]',
-			})
+		)
 		
-		should contain_class('jenkins::config').with({
+		should contain_class('jenkins::config').only_with({
+			:name   => 'Jenkins::Config',
 			:notify => 'Class[Jenkins::Service]',
 			})
 		

@@ -4,7 +4,7 @@ describe "jenkins::install::repo" do
 	let(:facts) { { :lsbdistid => 'Ubuntu', :osfamily => 'Debian', :lsbdistcodename => 'trusty', :puppetversion   => Puppet.version} }
 
 	it do
-		should contain_apt_key('jenkinsci').with({
+		should contain_apt__key('jenkinsci').with({
 			:id  =>  '0x9B7D32F2D50582E6',
 			:source  => 'http://jenkins-ci.org/debian/jenkins-ci.org.key',
 		})
