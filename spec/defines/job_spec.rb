@@ -4,6 +4,7 @@ describe 'jenkins::job' do
 	end
 
 	let(:facts) { { :lsbdistid => 'Ubuntu', :osfamily => 'Debian', :lsbdistcodename => 'trusty', :puppetversion   => Puppet.version} }
+
 	let(:title) { 'test' }
 	
 	it { should contain_class('jenkins::params') }
