@@ -5,13 +5,13 @@ describe "jenkins::config" do
 
     it do 
   		should contain_file('/etc/default/jenkins').with({
-  			'ensure'  => 'file',
+  			:ensure  => 'file',
   		})
 
   		should contain_file('/var/lib/jenkins/jobs').with({
-			'ensure'  => 'directory',
-			'mode'    => '0755',
-			'owner'   => 'jenkins',
+			:ensure  => 'directory',
+			:mode    => '0755',
+			:owner   => 'jenkins',
   		})
   	end
 end  

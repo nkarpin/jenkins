@@ -5,9 +5,9 @@ describe "jenkins::service" do
 
 	it do
 		should contain_service('jenkins').with({
-			'ensure'      => 'running',
-	        'enable'      => 'true',
-	        'require'     => 'Class[Jenkins::Config]',
+			:ensure      => 'running',
+	        :enable      => 'true',
+	        :require     => 'Class[Jenkins::Config]',
 		})
 	end
 end  
