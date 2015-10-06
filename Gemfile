@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+  gem 'puppetlabs_spec_helper', '~> 0.10.3'
+  gem 'rspec-puppet', '~> 2.2.0'
+  gem 'puppet-lint', '~> 1.1.0'
+  gem 'rspec', '~> 3.3.0'
+  gem 'rspec-core', '~> 3.3.2'
+  gem 'rspec-expectations', '~> 3.3.1'
+  gem 'rspec-mocks', '~> 3.3.2'
+  gem 'rspec-support', '~> 3.3.0'
