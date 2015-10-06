@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "jenkins" do
 	let(:facts) { { :lsbdistid => 'Ubuntu', :osfamily => 'Debian', :lsbdistcodename => 'trusty', :puppetversion   => Puppet.version} }
 
-
 	it do
 		should contain_class('jenkins::install').only_with({
 			:name   => 'Jenkins::Install',
